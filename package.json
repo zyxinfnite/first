@@ -1,0 +1,31 @@
+{
+  "name": "os-emulator-coding-platform",
+  "version": "1.0.0",
+  "description": "A cross-platform (web, iOS, Android) OS emulator coding platform with AI assistance",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev -w frontend\" \"npm run dev -w backend\" \"npm run dev -w mobile\"",
+    "dev:web": "concurrently \"npm run dev -w frontend\" \"npm run dev -w backend\"",
+    "dev:mobile": "npm run dev -w mobile",
+    "build": "npm run build -w frontend && npm run build -w backend && npm run build -w mobile",
+    "build:web": "npm run build -w frontend && npm run build -w backend",
+    "build:mobile": "npm run build -w mobile",
+    "start": "npm start -w backend",
+    "test": "npm test -w frontend && npm test -w backend && npm test -w mobile",
+    "lint": "npm run lint -w frontend && npm run lint -w backend && npm run lint -w mobile"
+  },
+  "workspaces": [
+    "frontend",
+    "backend",
+    "mobile",
+    "emulator",
+    "ai-assistant"
+  ],
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}
